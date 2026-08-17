@@ -4,7 +4,7 @@ function MovieCard({ item, handleEdit, handleDeleteMovie }) {
   const handleRating = async (rating) => {
     try {
       const response = await axios.patch(
-        `http://127.0.0.1:8000/watchlist/api/media/${item.id}/`,
+        `https://bingebox-ra8f.onrender.com`,
         {
           rating: rating,
         }

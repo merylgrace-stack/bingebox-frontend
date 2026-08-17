@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import AddMovie from "./components/AddMovie";
 import Watchlist from "./components/Watchlist";
 
+const API_URL = "https://bingebox-ra8f.onrender.com";
+
 function App() {
   const [username, setUsername] = useState(
     localStorage.getItem("username") || ""
@@ -32,7 +34,7 @@ function App() {
     axios.defaults.headers.common["Authorization"] = `Token ${token}`;
 
     axios
-      .get("http://127.0.0.1:8000/watchlist/api/media/", {
+      .get(`${API_URL}/watchlist/api/media/`, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -63,7 +65,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api-token-auth/",
+        `${API_URL}/api-token-auth/`,
         {
           username,
           password,
@@ -80,14 +82,14 @@ function App() {
       axios.defaults.headers.common["Authorization"] = `Token ${token}`;
 
       console.log("TOKEN BEING SENT:", token);
-console.log(
-  "AUTH HEADER BEFORE GET:",
-  axios.defaults.headers.common["Authorization"]
-);
+      console.log(
+        "AUTH HEADER BEFORE GET:",
+        axios.defaults.headers.common["Authorization"]
+      );
 
       // Get existing watchlist
       const mediaResponse = await axios.get(
-        "http://127.0.0.1:8000/watchlist/api/media/",
+        `${API_URL}/watchlist/api/media/`,
         {
           headers: {
             Authorization: `Token ${token}`,
@@ -117,12 +119,17 @@ console.log(
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/watchlist/api/media/",
+        `${API_URL}/watchlist/api/media/`,
         {
           title,
           type,
           status,
           rating: rating ? Number(rating) : null,
+        },
+        {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
         }
       );
 
@@ -159,12 +166,17 @@ console.log(
 
     try {
       const response = await axios.put(
-        `http://127.0.0.1:8000/watchlist/api/media/${editingId}/`,
+        `${API_URL}/watchlist/api/media/${editingId}/`,
         {
           title,
           type,
           status,
           rating: rating ? Number(rating) : null,
+        },
+        {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
         }
       );
 
@@ -197,7 +209,12 @@ console.log(
   const handleDeleteMovie = async (id) => {
     try {
       await axios.delete(
-        `http://127.0.0.1:8000/watchlist/api/media/${id}/`
+        `${API_URL}/watchlist/api/media/${id}/`,
+        {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
+        }
       );
 
       setMedia(media.filter((item) => item.id !== id));
