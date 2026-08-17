@@ -1,17 +1,34 @@
+
 function Navbar({ username, handleLogout }) {
   return (
-    <nav className="navbar">
-      <h1>🎬 BingeBox</h1>
+    <nav className="cinema-navbar">
 
-      <p>Welcome, {username}!</p>
+      <div className="navbar-brand">
+        <span className="brand-name">BingeBox</span>
+        
+        <span className="brand-subtitle">PERSONAL CINEMA</span>
+      </div>
 
-      <button onClick={handleLogout}>
-        🚪 Logout
-      </button>
+      <div className="navbar-right">
 
-      
+        <div className="navbar-user">
+          <span className="user-label">SIGNED IN AS</span>
+          <span className="username">{username}</span>
+        </div>
+
+        <button
+          className="logout-button"
+          onClick={handleLogout}
+        >
+          <span>Log out</span>
+          <span className="logout-arrow">→</span>
+        </button>
+
+      </div>
+
     </nav>
   );
 }
 
 export default Navbar;
+

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Login from "./components/Login";
@@ -23,7 +24,10 @@ function App() {
   const [rating, setRating] = useState("");
   const [editingId, setEditingId] = useState(null);
 
-  // Restore login when the app starts
+  // =========================================================
+  // RESTORE LOGIN
+  // =========================================================
+
   useEffect(() => {
     const token = localStorage.getItem("userToken");
 
@@ -59,53 +63,59 @@ function App() {
       });
   }, []);
 
-  // Signup
-const handleSignup = async (e) => {
-  e.preventDefault();
+  // =========================================================
+  // SIGNUP
+  // =========================================================
 
-  try {
-    const response = await axios.post(
-      `${API_URL}/api/signup/`,
-      {
-        username,
-        password,
-      }
-    );
+  const handleSignup = async (e) => {
+    e.preventDefault();
 
-    const token = response.data.token;
+    try {
+      const response = await axios.post(
+        `${API_URL}/api/signup/`,
+        {
+          username,
+          password,
+        }
+      );
 
-    localStorage.setItem("userToken", token);
-    localStorage.setItem("username", username);
+      const token = response.data.token;
 
-    axios.defaults.headers.common["Authorization"] = `Token ${token}`;
+      localStorage.setItem("userToken", token);
+      localStorage.setItem("username", username);
 
-    const mediaResponse = await axios.get(
-      `${API_URL}/watchlist/api/media/`,
-      {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      }
-    );
+      axios.defaults.headers.common["Authorization"] = `Token ${token}`;
 
-    setMedia(mediaResponse.data);
-    setLoggedIn(true);
+      const mediaResponse = await axios.get(
+        `${API_URL}/watchlist/api/media/`,
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
+      );
 
-    alert("Account created successfully!");
-  } catch (error) {
-    console.log(
-      "SIGNUP ERROR:",
-      JSON.stringify(error.response?.data, null, 2)
-    );
+      setMedia(mediaResponse.data);
+      setLoggedIn(true);
 
-    alert(
-      error.response?.data?.error ||
-      "Could not create account."
-    );
-  }
-};
+      alert("Account created successfully!");
+    } catch (error) {
+      console.log(
+        "SIGNUP ERROR:",
+        JSON.stringify(error.response?.data, null, 2)
+      );
 
-  // Login
+      alert(
+        error.response?.data?.error ||
+          "Could not create account."
+      );
+    }
+  };
+
+  // =========================================================
+  // LOGIN
+  // =========================================================
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -120,20 +130,18 @@ const handleSignup = async (e) => {
 
       const token = response.data.token;
 
-      // Save login information
       localStorage.setItem("userToken", token);
       localStorage.setItem("username", username);
 
-      // Set token for future requests
       axios.defaults.headers.common["Authorization"] = `Token ${token}`;
 
       console.log("TOKEN BEING SENT:", token);
+
       console.log(
         "AUTH HEADER BEFORE GET:",
         axios.defaults.headers.common["Authorization"]
       );
 
-      // Get existing watchlist
       const mediaResponse = await axios.get(
         `${API_URL}/watchlist/api/media/`,
         {
@@ -159,7 +167,10 @@ const handleSignup = async (e) => {
     }
   };
 
-  // Add movie
+  // =========================================================
+  // ADD MOVIE
+  // =========================================================
+
   const handleAddMovie = async (e) => {
     e.preventDefault();
 
@@ -197,16 +208,45 @@ const handleSignup = async (e) => {
     }
   };
 
-  // Edit movie
+  // =========================================================
+  // EDIT MOVIE
+  // =========================================================
+
   const handleEdit = (item) => {
     setEditingId(item.id);
     setTitle(item.title);
     setType(item.type);
     setStatus(item.status);
     setRating(item.rating ?? "");
+
+    // Automatically move the user to the edit form
+    setTimeout(() => {
+      document
+        .getElementById("movie-form-section")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+    }, 100);
   };
 
-  // Update movie
+  // =========================================================
+  // CANCEL EDIT
+  // =========================================================
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+
+    setTitle("");
+    setType("movie");
+    setStatus("unwatched");
+    setRating("");
+  };
+
+  // =========================================================
+  // UPDATE MOVIE
+  // =========================================================
+
   const handleUpdateMovie = async (e) => {
     e.preventDefault();
 
@@ -230,11 +270,14 @@ const handleSignup = async (e) => {
 
       setMedia(
         media.map((item) =>
-          item.id === editingId ? response.data : item
+          item.id === editingId
+            ? response.data
+            : item
         )
       );
 
       setEditingId(null);
+
       setTitle("");
       setType("movie");
       setStatus("unwatched");
@@ -251,7 +294,10 @@ const handleSignup = async (e) => {
     }
   };
 
-  // Delete movie
+  // =========================================================
+  // DELETE MOVIE
+  // =========================================================
+
   const handleDeleteMovie = async (id) => {
     try {
       await axios.delete(
@@ -263,7 +309,9 @@ const handleSignup = async (e) => {
         }
       );
 
-      setMedia(media.filter((item) => item.id !== id));
+      setMedia(
+        media.filter((item) => item.id !== id)
+      );
 
       alert("Movie deleted!");
     } catch (error) {
@@ -276,7 +324,10 @@ const handleSignup = async (e) => {
     }
   };
 
-  // Logout
+  // =========================================================
+  // LOGOUT
+  // =========================================================
+
   const handleLogout = () => {
     localStorage.removeItem("userToken");
     localStorage.removeItem("username");
@@ -296,9 +347,15 @@ const handleSignup = async (e) => {
     setEditingId(null);
   };
 
+  // =========================================================
+  // UI
+  // =========================================================
+
   return (
     <div className="app-container">
+
       {!loggedIn ? (
+
         <Login
           username={username}
           password={password}
@@ -307,8 +364,11 @@ const handleSignup = async (e) => {
           handleLogin={handleLogin}
           handleSignup={handleSignup}
         />
+
       ) : (
+
         <div>
+
           <Navbar
             username={username}
             handleLogout={handleLogout}
@@ -319,13 +379,18 @@ const handleSignup = async (e) => {
             type={type}
             status={status}
             rating={rating}
+
             setTitle={setTitle}
             setType={setType}
             setStatus={setStatus}
             setRating={setRating}
+
             handleAddMovie={handleAddMovie}
             handleUpdateMovie={handleUpdateMovie}
+
             editingId={editingId}
+
+            handleCancelEdit={handleCancelEdit}
           />
 
           <Watchlist
@@ -333,10 +398,14 @@ const handleSignup = async (e) => {
             handleEdit={handleEdit}
             handleDeleteMovie={handleDeleteMovie}
           />
+
         </div>
+
       )}
+
     </div>
   );
 }
 
 export default App;
+

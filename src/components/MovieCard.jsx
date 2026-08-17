@@ -20,8 +20,6 @@ function MovieCard({ item, handleEdit, handleDeleteMovie }) {
         }
       );
 
-      console.log("RATING UPDATED:", response.data);
-
       setRating(response.data.rating);
     } catch (error) {
       console.log(
@@ -31,52 +29,83 @@ function MovieCard({ item, handleEdit, handleDeleteMovie }) {
     }
   };
 
+  const isWatched = item.status === "watched";
+
   return (
-    <div className="movie-card">
-      <h3>🎬 {item.title}</h3>
+    <article className="cinema-movie-card">
 
-      <div className="movie-info">
-        <span className="movie-type">
-          {item.type === "movie" ? "🎬 Movie" : "📺 TV Show"}
+      <div className="movie-card-top">
+
+        <span className="movie-index">
+          #{String(item.id).padStart(2, "0")}
         </span>
 
-        <span className={`movie-status ${item.status}`}>
-          {item.status === "watched"
-            ? "✅ Watched"
-            : "⏳ Unwatched"}
+        <span className={`movie-state ${isWatched ? "watched" : ""}`}>
+          {isWatched ? "WATCHED" : "WAITING"}
         </span>
+
       </div>
 
-      <div className="movie-rating">
-        {Array.from({ length: 5 }, (_, index) => {
-          const starNumber = index + 1;
+      <div className="movie-card-main">
 
-          return (
-            <button
-              key={starNumber}
-              className={
-                starNumber <= rating
-                  ? "star active"
-                  : "star"
-              }
-              onClick={() => handleRating(starNumber)}
-            >
-              ★
-            </button>
-          );
-        })}
+        <h3>{item.title}</h3>
+
+        <p className="movie-kind">
+          {item.type === "movie" ? "FEATURE FILM" : "TELEVISION"}
+        </p>
+
       </div>
 
-      <div className="movie-actions">
-        <button onClick={() => handleEdit(item)}>
-          ✏️ Edit
+      <div className="movie-card-divider"></div>
+
+      <div className="movie-card-rating">
+
+        <span className="rating-label">
+          YOUR RATING
+        </span>
+
+        <div className="rating-stars">
+          {Array.from({ length: 5 }, (_, index) => {
+            const starNumber = index + 1;
+
+            return (
+              <button
+                key={starNumber}
+                className={
+                  starNumber <= rating
+                    ? "cinema-star active"
+                    : "cinema-star"
+                }
+                onClick={() => handleRating(starNumber)}
+                aria-label={`Rate ${starNumber} out of 5`}
+              >
+                ★
+              </button>
+            );
+          })}
+        </div>
+
+      </div>
+
+      <div className="movie-card-actions">
+
+        <button
+          className="card-action edit-action"
+          onClick={() => handleEdit(item)}
+        >
+          Edit
         </button>
 
-        <button onClick={() => handleDeleteMovie(item.id)}>
-          🗑️ Delete
+        <button
+          className="card-action delete-action"
+          onClick={() => handleDeleteMovie(item.id)}
+        >
+          Remove
         </button>
+
       </div>
-    </div>
+
+    </article>
   );
 }
 

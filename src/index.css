@@ -386,5 +386,2325 @@ button {
   transform: translateY(-1px);
 }
 
+/* =========================================================
+   BINGEBOX — LOGIN EXPERIENCE
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(120, 80, 255, 0.08),
+      transparent 42%
+    ),
+    #0b0b0c;
+  color: #f5f5f5;
+}
+
+.login-shell {
+  width: 100%;
+  max-width: 460px;
+}
+
+.login-card {
+  position: relative;
+  width: 100%;
+  padding: 46px 44px 38px;
+  background: rgba(20, 20, 22, 0.94);
+  border: 1px solid #2a2a2e;
+  border-radius: 20px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.015);
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 52px;
+  color: #f4f4f5;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.4px;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #56565d;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  background: #27272b;
+}
+
+/* Heading */
+
+.login-heading {
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #85858d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.login-heading h1 {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 31px;
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+
+.login-tagline {
+  margin: 13px 0 0;
+  color: #92929a;
+  font-size: 15px;
+  letter-spacing: 0.1px;
+}
+
+/* Form */
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #c9c9ce;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.login-card input {
+  width: 100%;
+  height: 52px;
+  padding: 0 15px;
+  border: 1px solid #343438;
+  border-radius: 10px;
+  outline: none;
+  background: #171719;
+  color: #f5f5f5;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-card input::placeholder {
+  color: #606067;
+}
+
+.login-card input:hover {
+  border-color: #44444a;
+}
+
+.login-card input:focus {
+  border-color: #77777f;
+  background: #1a1a1d;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+/* Primary button */
+
+.primary-button {
+  width: 100%;
+  height: 52px;
+  margin-top: 4px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+
+  background: #f1f1f1;
+  color: #111113;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button span {
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.primary-button:hover span {
+  transform: translateX(3px);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+/* Divider */
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 20px;
+}
+
+.login-divider span {
+  flex: 1;
+  height: 1px;
+  background: #29292d;
+}
+
+.login-divider p {
+  margin: 0;
+  color: #626269;
+  font-size: 11px;
+}
+
+/* Sign up / login toggle */
+
+.mode-toggle {
+  width: 100%;
+  padding: 6px 0;
+
+  border: none;
+  background: transparent;
+
+  color: #a8a8af;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.mode-toggle:hover {
+  color: #ffffff;
+}
+
+/* Footer */
+
+.login-footer {
+  margin: 20px 0 0;
+  text-align: center;
+  color: #55555c;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .login-page {
+    padding: 24px 16px;
+  }
+
+  .login-card {
+    padding: 34px 24px 30px;
+    border-radius: 16px;
+  }
+
+  .brand {
+    margin-bottom: 42px;
+  }
+
+  .login-heading h1 {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   BINGEBOX — DARK CINEMA LOGIN
+   ========================================================= */
+
+.cinema-login {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      rgba(103, 24, 32, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(88, 24, 28, 0.08),
+      transparent 35%
+    ),
+    #0b0909;
+
+  color: #eee9e3;
+}
+
+/* Cinematic background */
+
+.cinema-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cinema-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 9, 9, 0.98) 0%,
+      rgba(11, 9, 9, 0.88) 45%,
+      rgba(11, 9, 9, 0.72) 100%
+    );
+}
+
+.cinema-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  background-image:
+    radial-gradient(#ffffff 0.6px, transparent 0.6px);
+
+  background-size: 4px 4px;
+}
+
+/* Subtle red cinematic glow */
+
+.cinema-glow {
+  position: absolute;
+
+  width: 620px;
+  height: 620px;
+
+  right: -180px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(108, 24, 31, 0.12);
+
+  filter: blur(80px);
+}
+
+/* Decorative film lines */
+
+.film-line {
+  position: absolute;
+
+  width: 700px;
+  height: 1px;
+
+  background: rgba(145, 53, 59, 0.12);
+
+  transform: rotate(-28deg);
+}
+
+.film-line-one {
+  right: -180px;
+  top: 28%;
+}
+
+.film-line-two {
+  right: -120px;
+  top: 70%;
+}
+
+/* Main content */
+
+.cinema-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    390px;
+
+  align-items: center;
+
+  gap: 120px;
+}
+
+/* Brand */
+
+.cinema-brand {
+  position: absolute;
+
+  top: -80px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.brand-symbol {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #6e383d;
+  border-radius: 7px;
+
+  color: #f1e8df;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  background: #1b1213;
+}
+
+.brand-name {
+  color: #eee9e3;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+/* Intro */
+
+.cinema-intro {
+  max-width: 650px;
+}
+
+.cinema-label {
+  margin: 0 0 24px;
+
+  color: #96676a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.cinema-intro h1 {
+  margin: 0;
+
+  color: #eee9e3;
+
+  font-size: clamp(58px, 7vw, 92px);
+
+  line-height: 0.91;
+
+  font-weight: 500;
+
+  letter-spacing: -5px;
+}
+
+.cinema-intro h1 span {
+  color: #a94a50;
+}
+
+.cinema-description {
+  max-width: 430px;
+
+  margin: 34px 0 0;
+
+  color: #8e8783;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* Login panel */
+
+.cinema-login-panel {
+  padding: 38px;
+
+  background: rgba(22, 17, 17, 0.92);
+
+  border: 1px solid #322728;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px rgba(255, 255, 255, 0.025);
+
+  backdrop-filter: blur(18px);
+}
+
+.panel-heading {
+  margin-bottom: 30px;
+}
+
+.panel-label {
+  margin: 0 0 9px;
+
+  color: #8f5b5f;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+
+  color: #eee9e3;
+
+  font-size: 25px;
+  font-weight: 500;
+
+  letter-spacing: -0.7px;
+}
+
+/* Inputs */
+
+.cinema-login-panel form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 19px;
+}
+
+.cinema-input {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.cinema-input label {
+  color: #b8aeaa;
+
+  font-size: 12px;
+}
+
+.cinema-input input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #3a3031;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #120f0f;
+
+  color: #eee9e3;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cinema-input input::placeholder {
+  color: #625a58;
+}
+
+.cinema-input input:hover {
+  border-color: #514345;
+}
+
+.cinema-input input:focus {
+  border-color: #8d5055;
+
+  background: #171112;
+}
+
+/* Button */
+
+.cinema-button {
+  width: 100%;
+  height: 48px;
+
+  margin-top: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  border: 1px solid #874348;
+  border-radius: 7px;
+
+  background: #7d363c;
+
+  color: #f8efea;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cinema-button:hover {
+  background: #913f46;
+
+  border-color: #a35358;
+}
+
+.button-arrow {
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.cinema-button:hover .button-arrow {
+  transform: translateX(3px);
+}
+
+/* Account switch */
+
+.cinema-switch {
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #77706e;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.cinema-switch:hover {
+  color: #c1b8b3;
+}
+
+/* Footer */
+
+.cinema-footer {
+  position: absolute;
+
+  z-index: 3;
+
+  bottom: 22px;
+
+  left: 50%;
+
+  width: min(1180px, calc(100% - 80px));
+
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #4d4745;
+
+  font-size: 10px;
+
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .cinema-login {
+    padding: 90px 0;
+    align-items: flex-start;
+  }
+
+  .cinema-content {
+    width: min(520px, calc(100% - 40px));
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 55px;
+  }
+
+  .cinema-brand {
+    position: static;
+  }
+
+  .cinema-intro {
+    width: 100%;
+  }
+
+  .cinema-intro h1 {
+    font-size: clamp(54px, 15vw, 78px);
+  }
+
+  .cinema-login-panel {
+    width: 100%;
+  }
+
+  .cinema-footer {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .cinema-content {
+    width: calc(100% - 32px);
+  }
+
+  .cinema-login-panel {
+    padding: 28px 22px;
+  }
+
+  .cinema-intro h1 {
+    letter-spacing: -3px;
+  }
+}
+
+ /* =========================================================
+    BINGEBOX — DARK CINEMA NAVBAR
+    ========================================================= */
+
+.cinema-navbar {
+  position: relative;
+
+  width: 100%;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 42px;
+
+  margin-bottom: 48px;
+
+  background: rgba(11, 9, 9, 0.96);
+
+  border-bottom: 1px solid #302526;
+
+  color: #eee9e3;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.navbar-mark {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #6e383d;
+  border-radius: 7px;
+
+  background: #1b1213;
+
+  color: #f1e8df;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.navbar-name {
+  color: #eee9e3;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+/* Right side */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar-user {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  text-align: right;
+}
+
+.user-label {
+  color: #685f5d;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.user-name {
+  color: #c5bcb8;
+
+  font-size: 12px;
+}
+
+/* Logout */
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: 1px solid #3c2e30;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #a99f9b;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.logout-button:hover {
+  border-color: #754047;
+
+  background: #1b1213;
+
+  color: #eee9e3;
+}
+
+.logout-arrow {
+  font-size: 15px;
+
+  transition: transform 0.2s ease;
+}
+
+.logout-button:hover .logout-arrow {
+  transform: translateX(3px);
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .cinema-navbar {
+    height: auto;
+    min-height: 70px;
+
+    padding: 14px 20px;
+
+    margin-bottom: 30px;
+  }
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+  .navbar-user {
+    display: none;
+  }
+
+  .navbar-name {
+    font-size: 17px;
+  }
+
+  .logout-button {
+    height: 35px;
+  }
+}
+
+/* =========================================================
+   BINGEBOX — CINEMA WATCHLIST
+   ========================================================= */
+
+.cinema-watchlist {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* Header */
+
+.watchlist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 42px;
+}
+
+.watchlist-heading {
+  max-width: 620px;
+}
+
+.section-eyebrow {
+  margin: 0 0 12px;
+
+  color: #8f5b5f;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.watchlist-heading h2 {
+  margin: 0;
+
+  color: #eee9e3;
+
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: -2.5px;
+}
+
+.watchlist-heading h2 span {
+  color: #8d4147;
+}
+
+.watchlist-subtitle {
+  margin: 16px 0 0;
+
+  color: #716967;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Statistics */
+
+.watchlist-stats {
+  display: flex;
+  align-items: center;
+
+  padding: 16px 0;
+}
+
+.collection-stat {
+  min-width: 65px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  text-align: center;
+}
+
+.stat-number {
+  color: #d9d0cb;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.stat-label {
+  color: #635b59;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 30px;
+
+  margin: 0 14px;
+
+  background: #302728;
+}
+
+/* Collection navigation */
+
+.watchlist-navigation {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 30px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #2a2324;
+}
+
+.collection-tab {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 2px;
+
+  margin-right: 26px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #6f6865;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.collection-tab:hover {
+  color: #b9afaa;
+}
+
+.collection-tab.active {
+  color: #eee9e3;
+}
+
+.collection-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -13px;
+
+  height: 2px;
+
+  background: #874348;
+}
+
+.tab-count {
+  min-width: 20px;
+
+  padding: 3px 6px;
+
+  border: 1px solid #34292a;
+  border-radius: 10px;
+
+  color: #756c69;
+
+  font-size: 9px;
+
+  text-align: center;
+}
+
+.collection-tab.active .tab-count {
+  border-color: #61373b;
+
+  background: #241618;
+
+  color: #b17a7e;
+}
+
+/* Empty state */
+
+.empty-collection {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  border: 1px solid #282223;
+  border-radius: 10px;
+
+  background: rgba(18, 14, 14, 0.55);
+
+  text-align: center;
+}
+
+.empty-mark {
+  margin-bottom: 20px;
+
+  color: #694044;
+
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.empty-collection h3 {
+  margin: 0;
+
+  color: #c7bdb8;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.empty-collection p {
+  max-width: 350px;
+
+  margin: 10px 0 0;
+
+  color: #625b58;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Movie grid */
+
+.cinema-watchlist .watchlist-movies {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(260px, 1fr));
+
+  gap: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .cinema-watchlist {
+    width: calc(100% - 40px);
+  }
+
+  .watchlist-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .watchlist-stats {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .cinema-watchlist {
+    width: calc(100% - 32px);
+  }
+
+  .watchlist-heading h2 {
+    font-size: 42px;
+  }
+
+  .collection-tab {
+    margin-right: 15px;
+  }
+}
+
+/* =========================================================
+   BINGEBOX — CINEMA MOVIE CARDS
+   ========================================================= */
+
+.cinema-movie-card {
+  position: relative;
+
+  min-height: 275px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #2d2526;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(29, 22, 23, 0.95),
+      rgba(15, 12, 12, 0.98)
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cinema-movie-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #6f353b;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform 0.3s ease;
+}
+
+.cinema-movie-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #473133;
+
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.3);
+}
+
+.cinema-movie-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Top row */
+
+.movie-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+.movie-index {
+  color: #514947;
+
+  font-family: monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.movie-state {
+  padding: 5px 8px;
+
+  border: 1px solid #493033;
+  border-radius: 3px;
+
+  color: #93666a;
+
+  background: #1c1314;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.movie-state.watched {
+  border-color: #35433d;
+
+  color: #789186;
+
+  background: #131a17;
+}
+
+/* Movie title */
+
+.movie-card-main {
+  min-height: 82px;
+}
+
+.movie-card-main h3 {
+  margin: 0;
+
+  color: #eee9e3;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.8px;
+
+  overflow-wrap: anywhere;
+}
+
+.movie-kind {
+  margin: 9px 0 0;
+
+  color: #625b58;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+/* Divider */
+
+.movie-card-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #292223;
+}
+
+/* Rating */
+
+.movie-card-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.rating-label {
+  color: #625a58;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.cinema-star {
+  padding: 0 2px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #393334;
+
+  font-size: 16px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.cinema-star:hover {
+  color: #a26a4e;
+
+  transform: scale(1.12);
+}
+
+.cinema-star.active {
+  color: #a26a4e;
+}
+
+/* Actions */
+
+.movie-card-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.card-action {
+  height: 34px;
+
+  padding: 0 13px;
+
+  border: 1px solid #302728;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #756c69;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.edit-action:hover {
+  border-color: #614043;
+
+  background: #1c1314;
+
+  color: #c8beba;
+}
+
+.delete-action {
+  margin-left: auto;
+
+  border-color: transparent;
+
+  color: #665052;
+}
+
+.delete-action:hover {
+  border-color: #4b3033;
+
+  background: #1c1213;
+
+  color: #a9676c;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .cinema-movie-card {
+    min-height: 255px;
+
+    padding: 20px;
+  }
+
+  .movie-card-main h3 {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   BINGEBOX — ADD / EDIT COLLECTION ENTRY
+   ========================================================= */
+
+.cinema-add {
+  width: min(1180px, calc(100% - 80px));
+
+  margin: 0 auto 70px;
+
+  padding: 34px 36px 30px;
+
+  border: 1px solid #2d2526;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(27, 21, 22, 0.96),
+      rgba(16, 13, 13, 0.98)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+/* Heading */
+
+.add-movie-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.add-movie-heading h2 {
+  margin: 0;
+
+  color: #e9e1dc;
+
+  font-size: 27px;
+  font-weight: 500;
+
+  letter-spacing: -0.8px;
+}
+
+.add-movie-heading h2 span {
+  color: #874348;
+}
+
+.add-movie-description {
+  margin: 9px 0 0;
+
+  color: #68605d;
+
+  font-size: 12px;
+}
+
+.add-movie-number {
+  color: #4f4442;
+
+  font-family: monospace;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* Form */
+
+.cinema-movie-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  flex: 1;
+}
+
+.form-field label {
+  color: #625957;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 13px;
+
+  border: 1px solid #332a2b;
+  border-radius: 5px;
+
+  outline: none;
+
+  background: #171313;
+
+  color: #cfc6c1;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-field input::placeholder {
+  color: #504947;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #704044;
+
+  background: #1b1516;
+}
+
+.form-field select {
+  cursor: pointer;
+}
+
+.form-field select option {
+  background: #171313;
+  color: #cfc6c1;
+}
+
+/* Title */
+
+.title-field {
+  width: 100%;
+}
+
+/* Three-column row */
+
+.form-row {
+  display: flex;
+
+  gap: 14px;
+}
+
+/* Footer */
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding-top: 6px;
+}
+
+.form-footer p {
+  margin: 0;
+
+  color: #514947;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Submit */
+
+.cinema-submit {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  min-width: 135px;
+  height: 40px;
+
+  padding: 0 15px;
+
+  border: 1px solid #61373b;
+  border-radius: 5px;
+
+  background: #241618;
+
+  color: #c9bfbb;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cinema-submit:hover {
+  border-color: #875055;
+
+  background: #301b1e;
+
+  color: #eee9e3;
+}
+
+.submit-arrow {
+  margin-left: auto;
+
+  color: #996268;
+
+  font-size: 16px;
+
+  transition: transform 0.2s ease;
+}
+
+.cinema-submit:hover .submit-arrow {
+  transform: translateX(3px);
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .cinema-add {
+    width: calc(100% - 40px);
+
+    padding: 28px 24px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .cinema-submit {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .submit-arrow {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .cinema-add {
+    width: calc(100% - 32px);
+
+    padding: 24px 18px;
+  }
+
+  .add-movie-heading h2 {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================================
+   BINGEBOX — CINEMA NAVBAR
+   ========================================================= */
+
+.cinema-navbar {
+  width: 100%;
+
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  border-bottom: 1px solid #2a2324;
+
+  background: rgba(12, 10, 10, 0.96);
+
+  box-sizing: border-box;
+}
+
+/* Brand */
+
+.navbar-brand {
+  display: flex;
+  align-items: baseline;
+
+  gap: 9px;
+}
+
+.brand-name {
+  color: #e9e2dd;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  letter-spacing: -0.6px;
+}
+
+.brand-mark {
+  color: #824248;
+
+  font-size: 16px;
+}
+
+.brand-subtitle {
+  color: #514947;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+/* Right side */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+/* User */
+
+.navbar-user {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 3px;
+}
+
+.user-label {
+  color: #514947;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.username {
+  color: #bdb3ae;
+
+  font-size: 11px;
+}
+
+/* Logout */
+
+.logout-button {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #302728;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #746b68;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.logout-button:hover {
+  border-color: #5c383b;
+
+  background: #1b1415;
+
+  color: #c5bbb6;
+}
+
+.logout-arrow {
+  color: #875057;
+
+  font-size: 14px;
+
+  transition: transform 0.2s ease;
+}
+
+.logout-button:hover .logout-arrow {
+  transform: translateX(3px);
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .cinema-navbar {
+    padding: 0 20px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 14px;
+  }
+
+  .navbar-user {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .cinema-navbar {
+    min-height: 68px;
+
+    padding: 0 16px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================================
+   BINGEBOX — WATCHLIST
+   ========================================================= */
+
+.cinema-watchlist {
+  width: min(1180px, calc(100% - 80px));
+  margin: 70px auto 100px;
+}
+
+/* Header */
+
+.watchlist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+
+  margin-bottom: 45px;
+}
+
+.watchlist-heading {
+  position: relative;
+  padding-left: 24px;
+}
+
+/* Vertical accent */
+
+.watchlist-heading::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 34px;
+
+  width: 3px;
+  height: 78px;
+
+  background: #8a4147;
+}
+
+/* Eyebrow */
+
+.section-eyebrow {
+  margin: 0 0 17px;
+
+  color: #8d5054;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+/* Main heading */
+
+.watchlist-heading h2 {
+  margin: 0;
+
+  color: #e5dfdb;
+
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.watchlist-heading h2 span {
+  color: #8a4147;
+}
+
+/* Subtitle */
+
+.watchlist-subtitle {
+  margin: 20px 0 0;
+
+  color: #716967;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   COLLECTION STATS
+   ========================================================= */
+
+.watchlist-stats {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 5px;
+}
+
+.collection-stat {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 70px;
+}
+
+.stat-number {
+  color: #d8d0cc;
+
+  font-size: 23px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.stat-label {
+  margin-top: 7px;
+
+  color: #59504e;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+
+  margin: 0 22px;
+
+  background: #302728;
+}
+
+/* =========================================================
+   WATCHLIST NAVIGATION
+   ========================================================= */
+
+.watchlist-navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 32px;
+
+  border-bottom: 1px solid #292324;
+}
+
+.collection-tab {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 13px 18px 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #635b58;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.collection-tab::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+
+  background: transparent;
+
+  transition: background 0.2s ease;
+}
+
+.collection-tab:hover {
+  color: #b8afab;
+}
+
+.collection-tab.active {
+  color: #ded7d3;
+}
+
+.collection-tab.active::after {
+  background: #8a4147;
+}
+
+.tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 20px;
+  height: 18px;
+
+  padding: 0 5px;
+
+  border: 1px solid #302728;
+  border-radius: 10px;
+
+  color: #6c6260;
+
+  font-size: 8px;
+}
+
+.collection-tab.active .tab-count {
+  border-color: #563337;
+
+  color: #a46569;
+}
+
+/* =========================================================
+   EMPTY COLLECTION
+   ========================================================= */
+
+.empty-collection {
+  padding: 70px 20px 80px;
+
+  text-align: center;
+
+  border: 1px solid #211c1d;
+  background: #100e0e;
+}
+
+.empty-mark {
+  margin-bottom: 15px;
+
+  color: #704247;
+
+  font-size: 25px;
+}
+
+.empty-collection h3 {
+  margin: 0;
+
+  color: #c4bbb7;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.empty-collection p {
+  max-width: 380px;
+
+  margin: 10px auto 0;
+
+  color: #625a57;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   MOVIE GRID
+   ========================================================= */
+
+.watchlist-movies {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(270px, 1fr)
+  );
+
+  gap: 18px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .cinema-watchlist {
+    width: calc(100% - 40px);
+
+    margin-top: 50px;
+  }
+
+  .watchlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 35px;
+  }
+
+  .watchlist-heading h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .watchlist-stats {
+    width: 100%;
+  }
+
+  .collection-stat {
+    flex: 1;
+  }
+
+  .stat-divider {
+    margin: 0 14px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .cinema-watchlist {
+    width: calc(100% - 30px);
+  }
+
+  .watchlist-heading {
+    padding-left: 18px;
+  }
+
+  .watchlist-heading::before {
+    width: 2px;
+    height: 65px;
+  }
+
+  .watchlist-heading h2 {
+    font-size: 38px;
+  }
+
+  .watchlist-subtitle {
+    font-size: 12px;
+  }
+
+  .collection-tab {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .watchlist-movies {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   EDIT FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cancel-edit {
+  height: 44px;
+
+  padding: 0 20px;
+
+  border: 1px solid #302728;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #756c69;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cancel-edit:hover {
+  color: #c2b9b5;
+
+  border-color: #574143;
+
+  background: #1a1516;
+}
+
+@media (max-width: 500px) {
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cancel-edit {
+    width: 100%;
+  }
+}
+
 
 
