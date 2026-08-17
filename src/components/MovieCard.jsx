@@ -1,19 +1,28 @@
+import { useState } from "react";
 import axios from "axios";
 
 function MovieCard({ item, handleEdit, handleDeleteMovie }) {
-  const handleRating = async (rating) => {
+  const [rating, setRating] = useState(item.rating || 0);
+
+  const handleRating = async (newRating) => {
     try {
+      const token = localStorage.getItem("userToken");
+
       const response = await axios.patch(
-        `https://bingebox-ra8f.onrender.com`,
+        `https://bingebox-ra8f.onrender.com/watchlist/api/media/${item.id}/`,
         {
-          rating: rating,
+          rating: newRating,
+        },
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
         }
       );
 
       console.log("RATING UPDATED:", response.data);
 
-      // Update the displayed rating
-      item.rating = response.data.rating;
+      setRating(response.data.rating);
     } catch (error) {
       console.log(
         "RATING UPDATE ERROR:",
@@ -45,7 +54,11 @@ function MovieCard({ item, handleEdit, handleDeleteMovie }) {
           return (
             <button
               key={starNumber}
-              className={starNumber <= (item.rating || 0) ? "star active" : "star"}
+              className={
+                starNumber <= rating
+                  ? "star active"
+                  : "star"
+              }
               onClick={() => handleRating(starNumber)}
             >
               ★
