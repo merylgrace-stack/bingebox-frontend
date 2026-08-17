@@ -59,6 +59,52 @@ function App() {
       });
   }, []);
 
+  // Signup
+const handleSignup = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post(
+      `${API_URL}/api/signup/`,
+      {
+        username,
+        password,
+      }
+    );
+
+    const token = response.data.token;
+
+    localStorage.setItem("userToken", token);
+    localStorage.setItem("username", username);
+
+    axios.defaults.headers.common["Authorization"] = `Token ${token}`;
+
+    const mediaResponse = await axios.get(
+      `${API_URL}/watchlist/api/media/`,
+      {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      }
+    );
+
+    setMedia(mediaResponse.data);
+    setLoggedIn(true);
+
+    alert("Account created successfully!");
+  } catch (error) {
+    console.log(
+      "SIGNUP ERROR:",
+      JSON.stringify(error.response?.data, null, 2)
+    );
+
+    alert(
+      error.response?.data?.error ||
+      "Could not create account."
+    );
+  }
+};
+
   // Login
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -259,6 +305,7 @@ function App() {
           setUsername={setUsername}
           setPassword={setPassword}
           handleLogin={handleLogin}
+          handleSignup={handleSignup}
         />
       ) : (
         <div>
